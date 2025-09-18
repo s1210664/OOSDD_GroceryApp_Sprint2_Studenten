@@ -30,15 +30,14 @@ namespace Grocery.App.ViewModels
         {
             MyGroceryListItems.Clear();
             foreach (var item in _groceryListItemsService.GetAllOnGroceryListId(id)) MyGroceryListItems.Add(item);
-            GetAvailableProducts();
+            GetAvailableProducts(id);
         }
 
-        private void GetAvailableProducts()
+        private void GetAvailableProducts(int id)
         {
-            AvailableProducts = [];
-            
+            AvailableProducts.Clear();
             List<Product> products = _productService.GetAll(); 
-            List<GroceryListItem> groceryProducts = _groceryListItemsService.GetAllOnGroceryListId(2);
+            List<GroceryListItem> groceryProducts = _groceryListItemsService.GetAllOnGroceryListId(id);
             foreach (Product product in products)
             {
                 Console.WriteLine(product.Name);
@@ -59,10 +58,6 @@ namespace Grocery.App.ViewModels
 
                 
             }
-            //Maak de lijst AvailableProducts leeg
-            //Haal de lijst met producten op
-            //Controleer of het product al op de boodschappenlijst staat, zo niet zet het in de AvailableProducts lijst
-            //Houdt rekening met de voorraad (als die nul is kun je het niet meer aanbieden).            
         }
 
         partial void OnGroceryListChanged(GroceryList value)
