@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <RootNamespace>UnitTests</RootNamespace>
         <OutputType>Library</OutputType>
-        <TargetFrameworks>net8.0-android</TargetFrameworks>
+        <TargetFramework>net8.0-android</TargetFramework>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
     </PropertyGroup>
 
