@@ -1,5 +1,18 @@
 # GroceryApp sprint2 
 
+## Git branching strategie
+In deze repository wordt gitflow gebruikt als branching strategie. Hierin worden de branches main, release en develop standaard gebruikt naast verschillende feature en hotfix branches wanneer nodig. 
+
+### Feature branches
+Wanneer een nieuwe feature toegevoegd wordt dient een feature branch aangemaakt te worden vanaf develop, de naam hiervan moet met "feature/" starten. Wanneer de feature compleet is, moet deze branch via een pull request naar develop gemerged worden. 
+### Hotfix branches
+Wanneer er een patch nodig is in main, zal een hotfix branch aangemaakt moeten worden van main, de naam hiervan moet met "hotfix/" starten. Wanneer de hotfix klaar is dient de hotfix branch naar main en develop gemerged te worden via een pull request.
+### Develop branch
+De develop branch bestaat voor het actief ontwikkelen van de applicatie. Er mogen geen commits direct naar develop uitgevoerd worden, alle aanpassing moeten via feature branches.
+### Release branch
+Wanneer de develop branch klaar is voor een nieuwe release zal deze naar release gemerged moeten worden, in release mogen er alleen patches en kleine aanpassingen gemaakt worden. Als release klaar is voor productie zal deze naar develop en main gemerged moeten worden via pull requests.
+
+
 ## Docentversie  
 In deze versie zijn de wijzigingen doorgevoerd en is de code compleet.  
 
